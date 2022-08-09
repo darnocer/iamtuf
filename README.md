@@ -22,21 +22,17 @@ We are using [classes and combo classes](https://university.webflow.com/lesson/w
 .block-name_element1-name .--modifier1-key_modifier1-value{}
 ```
 
-#### Blocks
+#### Definitions 
+
 * **Block** - A functionally indepedent component that can be re-used
   *  Examples: Navbars, buttons, hero, etc.
 
-#### Elements
-* **Element** - A part of a block that can't be used separately. An element is always a part of a block, not another element. 
+* **Element** - A part of a block that can't be used separately. An element is always a part of a block, not another element. This results in a "flat" BEM structure, even though elements can be nested within elements. 
   * Examples: Menu items, button text, section heading, etc. 
 
-
-#### Modifiers
 * **Modifier** - A modification usually represented by a key-value pair
   * Examples: bg-color, color, size, etc. 
 
-
-#### Mix
 * **Mix** - Comprised of a block and an element of another block. Allows for creation of unique components based on existing global ones. 
   * Examples: hero-section, content-section, etc. 
 
@@ -49,6 +45,10 @@ With the exception of the navbar and footer, all internal components are built w
 
 
 ### Utility Classes
+**Utility classes** are classes that serve exaclty one purpose (eg. `.u-padding-16px`). We use these in combination with BEM to apply standard styles. Utility classes are prefixed with a `u-`. 
+
+#### Utility Class or Modifier? 
+In many cases, the same thing could be accomplished with either a Utility class or a modifier. As a general rule, we use utility classes when exactly one style needs to be applied to an element or a group of elements, often to create spacing between elements with padding or margins. The utility class will typically be the only class applied to the wrapper.
 
 
 ## Symbols
