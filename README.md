@@ -1,59 +1,115 @@
 # iamtuf.org
 
-## Class Structure & Naming Convention
+## Gettting Started with Webflow
 
-We are using [classes and combo classes](https://university.webflow.com/lesson/web-styling-using-classes) to apply styles in Webflow with a modified version of the BEM methodology. 
+Weblow has a great library of lessons in [Webflow University](https://university.webflow.com/). Please be sure to familiarize yourself with these Webflow concepts that are importantant to the foundational structure of `iamtuf.org` before diving in. 
 
-### BEM
-**BEM** (Block, Element, Modifier) is a component-based approach to web development. You can learn more about the BEM methodology [here](https://en.bem.info/methodology/quick-start/) and more about using it in Webflow [here](https://webflow.com/blog/class-naming-101-bem). The below summarizes how we are utilizing it specifically for iamtuf.org. 
-
-* Classes are all lowercase
-* Mutiple words for a Block, Element, or Modifier are separated by a single hyphen (`-`) (rather than a space)
-* Elements are linked to a block with a single underscore (`_`)
-* Modifiers are a separate class prefixed with double hyphens (`--`)
-* Modifiers are represented by its _key_ (eg. `bg-color`) and its _value_ (eg. `yellow`), separated by an underscore `_`
-* For the sake of the examples in this document, classes are prefixed with a period (`.`) to identify them as classes, but the period is not included in the actual class name. 
-
-```css
-.block-name{}
-.block-name_element1-name{}
-.block-name_element2-name{}
-.block-name_element3-name{}
-.block-name_element1-name .--modifier1-key_modifier1-value{}
-```
-
-#### Definitions 
-
-* **Block** - A functionally indepedent component that can be re-used
-  *  Examples: Navbars, buttons, hero, etc.
-
-* **Element** - A part of a block that can't be used separately. An element is always a part of a block, not another element. This results in a "flat" BEM structure, even though elements can be nested within elements. 
-  * Examples: Menu items, button text, section heading, etc. 
-
-* **Modifier** - A modification usually represented by a key-value pair
-  * Examples: bg-color, color, size, etc. 
-
-* **Mix** - Comprised of a block and an element of another block. Allows for creation of unique components based on existing global ones. 
-  * Examples: hero-section, content-section, etc. 
+* **Using Classes & Combo Classes** - [https://university.webflow.com/lesson/web-styling-using-classes](https://university.webflow.com/lesson/web-styling-using-classes)
+* **Understanding Inheritance in Webflow** - [https://university.webflow.com/lesson/style-panel-overview](https://university.webflow.com/lesson/style-panel-overview)
+* **Symbols & Override Fields** - [https://university.webflow.com/lesson/symbols](https://university.webflow.com/lesson/symbols)
 
 
-### Component Structure
-With the exception of the navbar and footer, all internal components are built with the following standard structure:
-* **Section** - Section is a standard Webflow element. The section element should never be modified. The section is named with a class that represents the name of the component (eg. `.hero-section`), which is technically a mix (eg. `.section .hero-section`). Any modifications to the section are added as modifiers (eg. `.hero-section .--bg-color_blue`). 
-  * **Container** - There is a container Webflow element, but we are using a custom `.container` class that has `5% padding` on all sides. This is added within the section to standardize page padding, but still allow for full-width backgrounds at the section-level. 
-    * **Blocks & Elemeents** - The rest of the component is built within the container following the BEM convention
+
+## Architecture 
 
 
-### Utility Classes
-**Utility classes** are classes that serve exaclty one purpose (eg. `.u-padding-16px`). We use these in combination with BEM to apply standard styles. Utility classes are prefixed with a `u-`. 
+### "Client First"
+We are using a slightly modified version of [Client First](https://www.finsweet.com/client-first/docs/intro) naming, an industry-standard scalable architecture convention specifically for Webflow websites. The docs go into depth about the methodology, but the key points are summarized below. 
 
-#### Utility Class or Modifier? 
-In many cases, the same thing could be accomplished with either a Utility class or a modifier. As a general rule, we use utility classes when exactly one style needs to be applied to an element or a group of elements, often to create spacing between elements with padding or margins. The utility class will typically be the only class applied to the wrapper.
+There is a Client First Chrome extension with some great features here: https://www.finsweet.com/extension 
+
+It may also be helpful, but not necessary, to understand the basic concept of BEM Methodology. **BEM** (Block, Element, Modifier) is a component-based approach to web development. You can learn more about the BEM methodology [here](https://en.bem.info/methodology/quick-start/) and more about using it in Webflow [here](https://webflow.com/blog/class-naming-101-bem). 
+
+Please be sure to adhere to these guidelines as closely as possible when creating new elements or classes so our website will be scalable and maintainable into the future by anyone. 
 
 
-## Symbols
+
+### Key Concepts
+
+Notes:
+* Nearly every element will have a class applied
+* Avoid applying margins and paddings directly to elements, and utilize spacing elements instead where possible.
+* Do not "deep stack" classes. If it is necessary to use more than 2 or 3 utility classes, use a custom class instead. 
 
 
-### Current Symbols
+
+#### Class Types
+**Utility Class** - Utility classes are global in nature and are used to apply a specific CSS property or combination of CSS properties to an element.
+
+> Utility classes are _hyphenated_. 
+
+Examples:
+
+* `text-weight-bold`
+* `text-style-muted`
+* `text-align-center`
+* `padding-large`
+
+
+
+
+**Custom Class** - If an element doesn't have a global or utility class applied, it should have a custom class, even if you don't apply any styles. 
+
+> Custom Classes include an _underscore_ with the convention `[identifier]_[element-name]`. 
+
+Each section will have an _identifier_, and all non-global elements within that block should be prefixed with the same identifier. 
+
+Examples:
+
+* `home-hero_component`
+* `key-stats_block`
+* `nav_menu-list`
+
+
+
+
+
+**Global Class** - Utility classes are global classes. Custom Classes can also be a Global Class if it's a structure that's repeated across different components. 
+
+> Global Custom Classes are prefixed with a `c_` (where the 'c' stands for "component"). 
+
+Examples:
+* `c_content`
+* `c_button`
+* `c_cta-container`
+* `c_arrow-link`
+
+
+**Modifiers** - Modifiers are added as a combo class to an existing global or custom "base" class, and similar to utility classes, change 1 or 2 specific CSS properties as a variation of the base class. If you need to add 2 or more modifiers, consider creating a new custom class instead. 
+
+> Modifiers are prefixed with a double hypen `--`, and will only work when combined with the base class. 
+
+* `c_button` `--yellow`
+* `c_button` `--secondary`
+
+
+
+#### Page & Symbol Strucuture
+Nearly all pages should have all content wrapped within a `page-wrapper` container, that has little to no styles applied, and all of the "main" page content (excluding Navigation and Footer) live within a `main-wrapper` container (applies `<main>` tag for accessibility). 
+
+Body
+* `page-wrapper`
+	* Navigation
+	* `main-wrapper`
+		* `section_[identifier]`
+			* `padding-global`
+				* `container-[size]`
+					* `padding-vertical` `padding-[size]`
+						* `[identifer]_component`
+							* [identifier]_[element-name]`
+								* ...
+		* [...Components]
+	* Footer
+
+
+
+#### Spacing 
+
+
+#### Sizing
+
+
+#### Typography
+
 
 
