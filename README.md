@@ -19,7 +19,7 @@ Also familarize yourself with our [Style Guide](https://iamtuf.webflow.io/style-
 
 
 ### "Client First"
-We are using a slightly modified version of [Client First](https://www.finsweet.com/client-first/docs/intro) naming, an industry-standard scalable architecture convention specifically for Webflow websites. The docs go into depth about the methodology, but the key points are summarized below. 
+We are using a slightly modified version of [Client First](https://www.finsweet.com/client-first/docs/intro) naming, an industry-standard scalable architecture convention specifically for Webflow websites. The docs go into depth about the methodology, but the key points for `iamtuf.org` are summarized in this ReadME. 
 
 There is a Client First Chrome extension with some great features here: https://www.finsweet.com/extension 
 
