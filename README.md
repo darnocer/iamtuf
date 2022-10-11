@@ -110,7 +110,7 @@ In order to create `text-color-yellow` as a _global class_, you would need to st
 
 
 
-#### Page & Symbol Strucuture
+### Page & Symbol Strucuture
 Nearly all pages should have all content wrapped within a `page-wrapper` container, that has little to no styles applied, and all of the "main" page content (excluding Navigation and Footer) live within a `main-wrapper` container (applies `<main>` tag for accessibility). 
 
 Then, each _section_ will follow a similar structure to keep layout spacing consistent. We create 🟩 _Symbols_ from the section-level. Within the section, there will typically be several elements with global classes until the actual "component" element (`[identifier]-[component-name]`), which houses the component-specific styles and content and typically consist mostly of custom classes. The "component" element is often, not always, a grid element. Within the component, there may be "global" components such as `c_content`, `c_button`, etc. 
@@ -132,7 +132,7 @@ Then, each _section_ will follow a similar structure to keep layout spacing cons
 
 
 
-#### Spacing 
+### Spacing 
 We are using CF's standard spacing classes, which are applied to a `div` element that wraps the content you want to add spacing to. You can see them in our [Style Guide](https://iamtuf.webflow.io/style-guide#Spacing) (must be in Edit mode in the Desginer to see the classes in the Navigation panel). 
 
 Examples:
@@ -141,11 +141,11 @@ Examples:
 * To add "large" padding to all sides of an element: `padding-large`
 
 
-#### Sizing
+### Sizing
 Per CF's guidelines, please use `rem` for sizing for _everything_. There may be a few exceptions where we use `em` and borders and border radiuses use `px`, but as a general rule use `rem` by default to keep sizing responsive.
 
 
-#### Typography
+### Typography
 All heading tags are styled, but please utilize the typography classes for all text elements. Heading tags should be applied for Semantic HTML/SEO purposes only, but do not need to dictate the styling. 
 
 For example, a "Thank You" message might be styled with `heading-xlarge`, but should not have an `h1` or `h2` tag and should be a text block instead because it does not have semantic meaning within the context of the page.  
