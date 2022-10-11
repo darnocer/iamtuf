@@ -128,6 +128,8 @@ For example, a "Thank You" message might be styled with `heading-xlarge`, but sh
 
 Additional text style classes can be found in the [Style Guide](https://iamtuf.webflow.io/style-guide). 
 
+Remember to avoid "deep stacking" - if you need to apply 3 or more classes, consider creating a custom class. For example, if you need to add `heading-xlarge`, `text-align-center`, `text-color-yellow`, and `text-style-italic` to get the desired style for a text element, create a custom class with these styles instead, such as `page-header_heading`. 
+
 ##### Heading Classes
 * `heading-xlarge`
 * `heading-large`
