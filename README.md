@@ -2,12 +2,17 @@
 
 ## Gettting Started with Webflow
 
-Weblow has a great library of lessons in [Webflow University](https://university.webflow.com/). Please be sure to familiarize yourself with these Webflow concepts that are importantant to the foundational structure of `iamtuf.org` before diving in. 
+Weblow has a great library of lessons in [Webflow University](https://university.webflow.com/). 
 
-* **Using Classes & Combo Classes** - [https://university.webflow.com/lesson/web-styling-using-classes](https://university.webflow.com/lesson/web-styling-using-classes)
-* **Understanding Inheritance in Webflow** - [https://university.webflow.com/lesson/style-panel-overview](https://university.webflow.com/lesson/style-panel-overview)
-* **Symbols & Override Fields** - [https://university.webflow.com/lesson/symbols](https://university.webflow.com/lesson/symbols)
+Please be sure to familiarize yourself with these Webflow concepts that are importantant to the foundational structure of `iamtuf.org` before diving in. 
 
+1. **Using Classes & Combo Classes** - [https://university.webflow.com/lesson/web-styling-using-classes](https://university.webflow.com/lesson/web-styling-using-classes)
+2. **Understanding Inheritance in Webflow** - [https://university.webflow.com/lesson/style-panel-overview](https://university.webflow.com/lesson/style-panel-overview)
+3. **Symbols & Override Fields** - [https://university.webflow.com/lesson/symbols](https://university.webflow.com/lesson/symbols)
+
+Also familarize yourself with our [Style Guide](https://iamtuf.webflow.io/style-guide) (`pw: iamtuf`) in editor mode to see the class structure. 
+
+[Made in Webflow](https://webflow.com/made-in-webflow) is also a great resource for ideas and what is possible in Webflow. 
 
 
 ## Architecture 
@@ -96,7 +101,7 @@ Body
 				* `container-[size]`
 					* `padding-vertical` `padding-[size]`
 						* `[identifer]_component`
-							* [identifier]_[element-name]`
+							* `[identifier]_[element-name]`
 								* ...
 		* [...Components]
 	* Footer
@@ -104,12 +109,39 @@ Body
 
 
 #### Spacing 
+We are using CF's standard spacing classes, which are applied to a `div` element that wraps the content you want to add spacing to. You can see them in our [Style Guide](https://iamtuf.webflow.io/style-guide#Spacing) (must be in Edit mode in the Desginer to see the classes in the Navigation panel). 
+
+Examples:
+* To add "medium" padding to the top and bottom: `padding-vertical` `padding-medium`
+* To add a "small" margin to the right: `margin-right` `margin-small`
+* To add "large" padding to all sides of an element: `padding-large`
 
 
 #### Sizing
+Per CF's guidelines, please use `rem` for sizing for _everything_. There may be a few exceptions where we use `em` and borders and border radiuses use `px`, but as a general rule use `rem` by default to keep sizing responsive.
 
 
 #### Typography
+All heading tags are styled, but please utilize the typography classes for all text elements. Heading tags should be applied for Semantic HTML/SEO purposes only, but do not need to dictate the styling. 
+
+For example, a "Thank You" message might be styled with `heading-xlarge`, but should not have an `h1` or `h2` tag and should be a text block instead because it does not have semantic meaning within the context of the page.  
+
+Additional text style classes can be found in the [Style Guide](https://iamtuf.webflow.io/style-guide). 
+
+##### Heading Classes
+* `heading-xlarge`
+* `heading-large`
+* `heading-medium`
+* `heading-small`
+* `heading-xsmall`
+
+##### Paragraph Classes
+* `text-size-xlarge`
+* `text-size-large`
+* `text-size-medium`
+* `text-size-regular`
+* `text-size-small`
+* `text-size-xsmall`
 
 
 
