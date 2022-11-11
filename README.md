@@ -4,6 +4,8 @@
 
 ### Getting Started with Webflow
 
+> **⚠️** As of November 8, 2022, Webflow has rebranded "Symbols" as "Components." You can read about components [here](https://university.webflow.com/lesson/components). While they work slightly differently, the naming convention and architecture guidelines still apply. 
+
 Weblow has a great library of lessons in [Webflow University](https://university.webflow.com/). 
 
 Please be sure to familiarize yourself with these Webflow concepts that are importantant to the foundational structure of `iamtuf.org` before diving in: 
@@ -19,6 +21,8 @@ Please be sure to familiarize yourself with these Webflow concepts that are impo
 1. [Style Guide](https://iamtuf.webflow.io/style-guide) (must be in editor mode to see the class structure)
 2. Available [Symbols](https://iamtuf.webflow.io/Symbols)
 3. [Figma Designs](https://www.figma.com/file/WJSS5O9jc3zrRVsEs2jLmK/TUF---iamtuf.org-2022?node-id=125%3A515)
+
+
 
 
 ### Fun Stuff
@@ -101,10 +105,10 @@ In order to create `text-color-yellow` as a _global class_, you would need to st
 
 ✦ **Modifiers** - Modifiers are added as a combo class to an existing global or custom "base" class, and similar to utility classes, change 1 or 2 specific CSS properties as a variation of the base class. There are intended to be a variation that is specific to the component you are styling. If you need to add 2 or more modifiers, consider creating a new custom class instead. 
 
-> ℹ️ Modifiers are prefixed with a double hypen `--`, and will only work when combined with the base class. 
+> ℹ️ Modifiers are prefixed with `is-`, and will only work when combined with the base class. 
 
-* `c_button` `--yellow`
-* `c_button` `--secondary`
+* `c_button` `is-yellow`
+* `c_button` `is-secondary`
 
 - [ ] TO DO: Refactor classes and avoid using Modifiers. Convert modifiers into global utility classes or custom classes (modifiers are an artifact from the BEM structure the website was built with at the beginning). 
 
