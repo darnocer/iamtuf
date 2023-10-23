@@ -16,7 +16,7 @@ Please be sure to familiarize yourself with these Webflow concepts that are impo
 
 
 ### iamtuf.org-specific Resources
-`pw: iamtuf`
+_Reach out for passcode._
 
 1. [Style Guide](https://iamtuf.webflow.io/style-guide) (must be in editor mode to see the class structure)
 2. Available [Symbols](https://iamtuf.webflow.io/Symbols)
